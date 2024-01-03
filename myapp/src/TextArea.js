@@ -47,7 +47,7 @@ export default function TextArea(props) {
             <textarea className="form-control" value={text} onChange={handleOnChange} id="mybox" rows="8"></textarea>
             <button type="button " onClick={handleUptext} className="btn btn-primary m-2">Uppercase</button>
             <button type="button" onClick={handleLowtext} className="btn btn-primary m-2">LowerCase</button>
-            <button type="button" onClick={handleCopytext} className="btn btn-primary m-2">Copy Text</button>
+            <button type="button" onClick={handleCopytext} className="btn btn-primary m-2">Copy the Text</button>
         </div>
         
      
