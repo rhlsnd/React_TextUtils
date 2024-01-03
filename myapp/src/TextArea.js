@@ -2,38 +2,26 @@ import React, { useState } from 'react'
 import Alert from './Alert';
 
 
-
 export default function TextArea(props) {
-    const [alert, setAlert] = useState(null);
-
-  const showAlert = (message, type)=>{
     
-    setAlert({
-      msg: message,
-      type:type
-    })
-    setTimeout(() => {
-      setAlert(null)
-    }, 1200);
-  }
     const [text, setText] = useState("")
     const handleUptext = ()=>{
         let newText = text.toUpperCase();
         setText(newText)
-        showAlert("Converted to Uppercase", "success")
+        props.showAlert("Converted to Uppercase", "success")
         
     }
     const handleLowtext = ()=>{
         let newText = text.toLowerCase();
         setText(newText)
-        showAlert("Converted to Lowercase", "success")
+        props.showAlert("Converted to Lowercase", "success")
     }
     const handleCopytext = ()=>{
         let newText = document.getElementById("mybox"
         );
         newText.select();
         navigator.clipboard.writeText(newText.value);
-        showAlert("Copied Text To ClipBoard", "success")
+        props.showAlert("Copied Text To ClipBoard", "success")
     }
     const handleOnChange = (event)=>{
         setText(event.target.value);
